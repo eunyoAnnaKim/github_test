@@ -31,3 +31,6 @@ for i in range(1,11):
         eachbook = []
         eachbook = onebookdata.text.split('\n')
         print(eachbook)
+
+
+왠열 맥북에 엑셀이없어서 진행이 불가..
