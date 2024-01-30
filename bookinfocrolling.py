@@ -27,8 +27,15 @@ while True:
         prev_height = driver.execute_script("return document.body.scrollHeight")
 
 driver.find_element(By.PARTIAL_LINK_TEXT, '가정/요리').click()
-time.sleep(5)
-booktitle = []
-elems_title = driver.find_elements(By.CLASS_NAME, 'bookListItem_text__bglOw')
-for elem_title in elems_title:
-    title = elem_title.get_property
+time.sleep(3)
+
+
+
+bookcontent = driver.find_element(By.CSS_SELECTOR, '#book_list > ul')
+eachbook = bookcontent.find_elements(By.CSS_SELECTOR, 'bookListItem_item_book__1yCey')
+book_title = []
+for booklist in eachbook:
+    booktitle = booklist.find_element(By.XPATH, '//*[@id="book_list"]/ul/li/div/a[1]/div[2]/div[1]/span/span[1]')
+    book_title.append(booktitle.text)
+
+print(book_title)
